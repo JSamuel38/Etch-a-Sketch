@@ -2,10 +2,10 @@
 	border: solid;
 	display: flex;
 	flex-wrap: wrap;
-	height: 16rem;
+	height: 24rem;
 	margin: auto;
 	margin-top: 10%;
-	width: 16rem;
+	width: 24rem;
 }
 
 .pixel {
