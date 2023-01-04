@@ -38,8 +38,8 @@ function createContainer(containerSize) {
 	const pixel = container.querySelectorAll('div');
 	pixel.forEach((pixel) => {
 		pixel.setAttribute('class', 'pixel');
-		pixel.style.width = `${16 / Math.sqrt(containerSize)}rem`; //Size pixels
-		pixel.style.height = `${16 / Math.sqrt(containerSize)}rem`;//based on amount
+		pixel.style.width = `${100 / Math.sqrt(containerSize)}%`; //Size of pixels
+		pixel.style.height = `${100 / Math.sqrt(containerSize)}%`;//based on amount
 	});
 }
 //Check if mouse clicked
