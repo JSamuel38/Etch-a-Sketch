@@ -10,11 +10,11 @@ colorPicker.addEventListener('change', (e) => {
 });
 //Allow user to selecet size
 const sizeSelector = document.createElement('input');
-sizeSelector.setAttribute('type','range');
+sizeSelector.setAttribute('type','number');
 sizeSelector.setAttribute('min', '16');
 sizeSelector.setAttribute('max', '64');
 sizeSelector.setAttribute('step', '1');
-sizeSelector.setAttribute('value', '6');
+sizeSelector.setAttribute('value', '16');
 document.body.appendChild(sizeSelector);
 //Button to confirm size
 const sizeButton = document.createElement('button');
@@ -25,24 +25,33 @@ sizeButton.addEventListener('click', () => {
 	createContainer(containerSize);
 })
 
-const container = document.querySelector(".container");
+const container = document.querySelector('.container');
 //Create every pixel in the container of a selected size
 function createContainer(containerSize) {
 	container.replaceChildren();				//If the container has children, empty it
 	for (let i = 0; i < containerSize; i++) {		//Add new children
-		container.appendChild(document.createElement("div")); 
+		const pixel = document.createElement('div')
+		pixel.addEventListener('mousedown', draw)
+		pixel.addEventListener('mouseover', draw);
+		container.appendChild(pixel);
 	}
-	const pixel = container.querySelectorAll("div");
+	const pixel = container.querySelectorAll('div');
 	pixel.forEach((pixel) => {
-		pixel.setAttribute("class", "pixel");
+		pixel.setAttribute('class', 'pixel');
 		pixel.style.width = `${16 / Math.sqrt(containerSize)}rem`; //Size pixels
 		pixel.style.height = `${16 / Math.sqrt(containerSize)}rem`;//based on amount
 	});
 	//Allow user to draw with selected color, default is black
-	pixel.forEach((pixel) => {
-		pixel.addEventListener("mouseover", () => {		
-			pixel.style.backgroundColor = pickedColor || "black";
-		});
-	});
+	
+}
+//Check if mouse clicked
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+//Draws if mouse is clicked
+function draw(e) {
+	if (e.type === 'mouseover' && !mouseDown) return;
+	e.target.style.backgroundColor = pickedColor || 'black';
+	console.log(e);
 }
 createContainer(256);
