@@ -3,13 +3,19 @@
 		font-size: 1rem;
 	}
 
+	h1 {
+		font-size: 4rem;
+		text-align: center;
+		margin-top: 5%;
+	}
+
 	.container {
 	border: solid;
 	display: flex;
 	flex-wrap: wrap;
 	height: 24rem;
 	margin: auto;
-	margin-top: 10%;
+	margin-top: 5%;
 	width: 24rem;
 }
 
