@@ -1,29 +1,41 @@
+const settings = document.querySelector('.settings');
+const sizeSettings = document.createElement('div');
+sizeSettings.classList.add('sizeSettings');
 //Create a color picker
 const colorPicker = document.createElement('input');
 colorPicker.setAttribute('type', 'color');
+colorPicker.setAttribute('class', 'colorPicker');
 colorPicker.textContent = 'Pick a color';
-document.body.appendChild(colorPicker);
+settings.appendChild(colorPicker);
 //Allow user to select a color
 let pickedColor;
 colorPicker.addEventListener('change', (e) => {
 	pickedColor = e.target.value;
 });
+
+settings.appendChild(sizeSettings);
+//Label for size
+const sizeLabel = document.createElement('label');
+sizeLabel.textContent = 'Size:';
+sizeSettings.appendChild(sizeLabel);
 //Allow user to selecet size
 const sizeSelector = document.createElement('input');
+sizeSelector.setAttribute('class', 'sizeSelector');
 sizeSelector.setAttribute('type','number');
 sizeSelector.setAttribute('min', '16');
 sizeSelector.setAttribute('max', '64');
 sizeSelector.setAttribute('step', '1');
 sizeSelector.setAttribute('value', '16');
-document.body.appendChild(sizeSelector);
+sizeSettings.appendChild(sizeSelector);
 //Button to confirm size
 const sizeButton = document.createElement('button');
-sizeButton.textContent = 'Confirm Size';
-document.body.appendChild(sizeButton);
+sizeButton.setAttribute('class','sizeButton');
+sizeButton.textContent = 'Confirm';
+settings.appendChild(sizeButton);
 sizeButton.addEventListener('click', () => {
 	let containerSize = Math.pow(sizeSelector.value, 2);
 	createContainer(containerSize);
-})
+});
 
 const container = document.querySelector('.container');
 //Create every pixel in the container of a selected size
@@ -55,16 +67,18 @@ function draw(e) {
 }
 //Eraser button
 const eraserButton = document.createElement('button');
+eraserButton.setAttribute('class', 'eraserButton');
 eraserButton.textContent = 'Eraser';
-document.body.appendChild(eraserButton);
+settings.appendChild(eraserButton);
 //Turns "brush" into an eraser, makes color the same as canvas original color
 eraserButton.addEventListener('click', () => {
 	pickedColor = 'white';
 });
 //Clear button
 const clearButton = document.createElement('button');
+clearButton.setAttribute('class', 'clearButton');
 clearButton.textContent = 'Clear';
-document.body.appendChild(clearButton);
+settings.appendChild(clearButton);
 //Clear the whole canvas
 clearButton.addEventListener('click', () => {
 	container.querySelectorAll('div').forEach((pixel) => {

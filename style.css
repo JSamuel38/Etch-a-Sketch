@@ -1,4 +1,9 @@
-.container {
+	* {
+		font-family: 'Ubuntu', sans-serif;
+		font-size: 1rem;
+	}
+
+	.container {
 	border: solid;
 	display: flex;
 	flex-wrap: wrap;
@@ -10,4 +15,37 @@
 
 .pixel {
 	background-color: #fff;
+}
+
+.settings {
+	align-items: center;
+	border: solid;
+	border-radius: 1rem;
+  display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+	margin: auto;
+	margin-top: 1rem;
+	padding: 1rem;
+	width: 24rem;
+}
+
+.settings > .colorPicker {
+	border: none;
+  padding: 0;
+  height: 2rem;
+	width: 2rem;;
+}
+
+.settings > * {
+	background-color: #fff;
+	border: solid 0.125rem;
+	border-radius: 0.5rem;
+	padding: 0.25rem;
+}
+
+.settings > .sizeSettings .sizeSelector {
+	margin: 0.125rem;
+	width: 2.5rem;
 }
