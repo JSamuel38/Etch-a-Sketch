@@ -41,8 +41,6 @@ function createContainer(containerSize) {
 		pixel.style.width = `${16 / Math.sqrt(containerSize)}rem`; //Size pixels
 		pixel.style.height = `${16 / Math.sqrt(containerSize)}rem`;//based on amount
 	});
-	//Allow user to draw with selected color, default is black
-	
 }
 //Check if mouse clicked
 let mouseDown = false;
@@ -51,7 +49,9 @@ document.body.onmouseup = () => (mouseDown = false);
 //Draws if mouse is clicked
 function draw(e) {
 	if (e.type === 'mouseover' && !mouseDown) return;
+	//Allow user to draw with selected color, default is black
 	e.target.style.backgroundColor = pickedColor || 'black';
 	console.log(e);
 }
+//Creates default container
 createContainer(256);
