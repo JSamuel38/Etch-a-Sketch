@@ -53,5 +53,23 @@ function draw(e) {
 	e.target.style.backgroundColor = pickedColor || 'black';
 	console.log(e);
 }
+//Eraser button
+const eraserButton = document.createElement('button');
+eraserButton.textContent = 'Eraser';
+document.body.appendChild(eraserButton);
+//Turns "brush" into an eraser, makes color the same as canvas original color
+eraserButton.addEventListener('click', () => {
+	pickedColor = 'white';
+});
+//Clear button
+const clearButton = document.createElement('button');
+clearButton.textContent = 'Clear';
+document.body.appendChild(clearButton);
+//Clear the whole canvas
+clearButton.addEventListener('click', () => {
+	container.querySelectorAll('div').forEach((pixel) => {
+		pixel.style.backgroundColor = 'white';
+	});
+});
 //Creates default container
 createContainer(256);
