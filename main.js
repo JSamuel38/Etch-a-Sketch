@@ -31,7 +31,7 @@ sizeSettings.appendChild(sizeSelector);
 const sizeButton = document.createElement('button');
 sizeButton.setAttribute('class','sizeButton');
 sizeButton.textContent = 'Confirm';
-settings.appendChild(sizeButton);
+sizeSettings.appendChild(sizeButton);
 sizeButton.addEventListener('click', () => {
 	let containerSize = Math.pow(sizeSelector.value, 2);
 	createContainer(containerSize);

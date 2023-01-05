@@ -1,57 +1,78 @@
-	* {
-		font-family: 'Ubuntu', sans-serif;
-		font-size: 1rem;
-	}
+* {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+}
 
-	h1 {
-		font-size: 4rem;
-		text-align: center;
-		margin-top: 5%;
-	}
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 5%;
+}
 
-	.container {
-	border: solid;
-	display: flex;
-	flex-wrap: wrap;
-	height: 24rem;
-	margin: auto;
-	margin-top: 5%;
-	width: 24rem;
+.container {
+  border: solid;
+  display: flex;
+  flex-wrap: wrap;
+  height: 24rem;
+  margin: auto;
+  margin-top: 5%;
+  width: 24rem;
 }
 
 .pixel {
-	background-color: #fff;
+  background-color: #fff;
 }
 
 .settings {
-	align-items: center;
-	border: solid;
-	border-radius: 1rem;
+  align-items: center;
+  border: solid;
+  border-radius: 1rem;
   display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-	justify-content: center;
-	margin: auto;
-	margin-top: 1rem;
-	padding: 1rem;
-	width: 24rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 24rem;
 }
 
 .settings > .colorPicker {
-	border: none;
+  border: none;
   padding: 0;
   height: 2rem;
-	width: 2rem;;
+  width: 2rem;
 }
 
 .settings > * {
-	background-color: #fff;
-	border: solid 0.125rem;
-	border-radius: 0.5rem;
-	padding: 0.25rem;
+  background-color: #fff;
+  border: solid 0.125rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
 }
 
 .settings > .sizeSettings .sizeSelector {
-	margin: 0.125rem;
-	width: 2.5rem;
+  margin: 0.125rem;
+  width: 2.5rem;
 }
+
+.settings > .sizeSettings{
+	padding: 0.5rem;
+}
+
+.settings > .sizeSettings .sizeButton {
+  background-color: #fff;
+  border: solid 0.125rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+}
+
+button:hover,
+.settings > .sizeSettings .sizeButton:hover {
+  background-color: #ddd;
+}
+
+button:active,
+.settings > .sizeSettings .sizeButton:active {
+  background-color: #ccc;
+}	
